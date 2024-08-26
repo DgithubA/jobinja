@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    const TableName = \App\Models\MyTime::table_name;
+    public function up(): void{
+        Schema::create(self::TableName, function (Blueprint $table) {
+            $table->id();
+            $table->morphs('mytimable');
+            $table->timestamp('from');
+            $table->boolean('in_progress')->default(true);
+            $table->timestamp('end')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void{
+        Schema::dropIfExists(self::TableName);
+    }
+};
