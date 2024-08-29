@@ -4,7 +4,7 @@
 My goal is to be able to create a personal resume building site that works with username path. For example, for me, it's like this: example.com/dana, so I can access the user's resume and work history,etc.
 
 ## updates
--[ ]  convert to laravel 11
+- [ ]  convert to laravel 11
 - [ ] service/dependency arch
 - [ ] remove custom header auth (low security)
 - [ ] use laravel Octane.
